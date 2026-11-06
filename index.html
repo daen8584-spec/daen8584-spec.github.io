@@ -130,8 +130,8 @@ footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; }
       <div class="metrics">
         <div class="metric"><span class="value">100%</span><span class="label">field accuracy on a 20-case evaluation set, including 10 targeted failure modes</span></div>
         <div class="metric"><span class="value">0</span><span class="label">hallucinated values across the evaluation set</span></div>
-        <div class="metric"><span class="value">10 of 40</span><span class="label">concurrent requests admitted by a 10-token rate-limit bucket, as designed</span></div>
-        <div class="metric"><span class="value">82</span><span class="label">unit and integration tests against a real PostgreSQL database in CI</span></div>
+        <div class="metric"><span class="value">10 of 40</span><span class="label">concurrent attempts admitted by a 10-token rate-limit bucket, checked by an integration test</span></div>
+        <div class="metric"><span class="value">89</span><span class="label">unit and integration tests, the integration tests against a real PostgreSQL database in CI</span></div>
       </div>
       <h4>Engineering decisions</h4>
       <ul class="points">
@@ -139,7 +139,8 @@ footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; }
         <li>A document, its audit event and its extraction job are written in one transaction, so a document can never exist without the job that processes it. Workers claim jobs with <code>FOR UPDATE SKIP LOCKED</code> and recover from crashes.</li>
         <li>Authorization is checked per object, with three roles and server-side sessions. Status transitions are atomic, so two reviewers cannot approve conflicting versions.</li>
         <li>Rate limiting for login, signup and upload uses token buckets in PostgreSQL, so limits hold across any number of app instances without adding Redis.</li>
-        <li>The evaluation harness can fail CI when accuracy drops, so a prompt or model change cannot silently make extraction worse.</li>
+        <li>The evaluation command exits with an error when field accuracy falls below a threshold, so a prompt or model change can be checked before it ships rather than silently making extraction worse.</li>
+        <li>Upload bodies are size-checked before they are read into memory, and a re-extraction can never leave a document queued without a job behind it.</li>
       </ul>
     </article>
 
@@ -181,13 +182,13 @@ footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; }
       <div class="metrics">
         <div class="metric"><span class="value">0.86 to 1.18x</span><span class="label">throughput relative to Redis on the same machine, without pipelining</span></div>
         <div class="metric"><span class="value">61</span><span class="label">commands across strings, lists, hashes and sorted sets</span></div>
-        <div class="metric"><span class="value">Redis 7 and 8</span><span class="label">the same integration tests pass against kvstore and real Redis</span></div>
+        <div class="metric"><span class="value">35</span><span class="label">protocol and command tests that pass unchanged against both kvstore and Redis 7.0</span></div>
       </div>
       <h4>Engineering decisions</h4>
       <ul class="points">
         <li>A single-threaded event loop with no locks on the data path, fair reading across clients and backpressure for clients that do not read their replies.</li>
         <li>The hash table resizes incrementally, so a resize never stalls a single request, and keys are hashed with SipHash and a random key against hash flooding.</li>
-        <li>Append-only persistence with configurable fsync, recovery from a truncated file and compaction in a forked child while the server keeps serving.</li>
+        <li>Append-only persistence with configurable fsync, recovery from a truncated file and compaction in a forked child while the server keeps serving. A write is acknowledged only once it is in the file: when the disk is full, its reply waits and new writes are refused, as in Redis.</li>
         <li>Checked with AddressSanitizer, UndefinedBehaviorSanitizer and continuous fuzzing of the protocol parser in CI.</li>
       </ul>
     </article>
