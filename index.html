@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max | Software Engineer</title>
+<meta name="description" content="Software engineer building back-end systems, AI applications and systems software. Three open-source projects, each measured against a benchmark or a reference implementation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #1b1f24;
+  --muted: #5b636e;
+  --line: #e4e6ea;
+  --accent: #0e6b74;
+  --accent-soft: #e5f2f3;
+  --code: #f2f3f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1215;
+    --surface: #161a1f;
+    --text: #e6e8eb;
+    --muted: #9aa3ad;
+    --line: #262c33;
+    --accent: #5cc3cc;
+    --accent-soft: #15292c;
+    --code: #1d2228;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; font-size: 0.88em; }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+header.hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+.eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 12px; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px; font-weight: 700; }
+.lead { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0 0 24px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 500; font-size: 15px; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+
+section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+h2 { font-size: 22px; margin: 0 0 24px; letter-spacing: -0.01em; }
+
+.project { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
+.project-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; margin-bottom: 6px; }
+.project h3 { margin: 0; font-size: 21px; }
+.project .repo { font-size: 14px; }
+.tagline { color: var(--muted); margin: 0 0 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0; list-style: none; }
+.tags li { background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 500; padding: 3px 10px; border-radius: 999px; }
+
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 0 0 22px; }
+.metric { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.metric .value { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; display: block; }
+.metric .label { font-size: 13px; color: var(--muted); line-height: 1.4; display: block; margin-top: 2px; }
+
+.project h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+.project ul.points { margin: 0; padding-left: 20px; }
+.project ul.points li { margin-bottom: 8px; }
+.project ul.points li::marker { color: var(--accent); }
+
+.story { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 0 0 22px; }
+.story p { margin: 0; }
+.story strong { display: block; margin-bottom: 4px; }
+
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.principle h3 { font-size: 17px; margin: 0 0 6px; }
+.principle p { margin: 0; color: var(--muted); }
+
+dl.skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 20px; margin: 0; }
+dl.skills dt { font-weight: 600; }
+dl.skills dd { margin: 0; color: var(--muted); }
+
+footer { padding: 36px 0 56px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 560px) {
+  header.hero { padding: 48px 0 36px; }
+  .project { padding: 20px; }
+  dl.skills { grid-template-columns: 1fr; gap: 2px; }
+  dl.skills dd { margin-bottom: 12px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Software Engineer</p>
+    <h1>Max</h1>
+    <p class="lead">I build back-end systems, AI applications and systems software. Every project here is measured against a public benchmark or a reference implementation, tested in CI, and documented with the design decisions behind it.</p>
+    <div class="links">
+      <a class="btn primary" href="#projects">Projects</a>
+      <a class="btn" href="https://github.com/daen8584-spec">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>DocExtract</h3>
+        <a class="repo mono" href="https://github.com/daen8584-spec/docextract">github.com/daen8584-spec/docextract</a>
+      </div>
+      <p class="tagline">Full-stack document extraction: an LLM pulls structured fields from uploaded text and PDF files, and a human reviewer verifies, corrects and approves them before they are trusted.</p>
+      <ul class="tags">
+        <li>TypeScript</li><li>Next.js App Router</li><li>PostgreSQL</li><li>Drizzle ORM</li><li>Zod</li><li>LLM integration</li><li>Docker</li><li>GitHub Actions</li>
+      </ul>
+      <div class="metrics">
+        <div class="metric"><span class="value">100%</span><span class="label">field accuracy on a 20-case evaluation set, including 10 targeted failure modes</span></div>
+        <div class="metric"><span class="value">0</span><span class="label">hallucinated values across the evaluation set</span></div>
+        <div class="metric"><span class="value">10 of 40</span><span class="label">concurrent requests admitted by a 10-token rate-limit bucket, as designed</span></div>
+        <div class="metric"><span class="value">82</span><span class="label">unit and integration tests against a real PostgreSQL database in CI</span></div>
+      </div>
+      <h4>Engineering decisions</h4>
+      <ul class="points">
+        <li>Model output is treated as untrusted input: every response is validated against a schema, and an invalid response is retried with backoff instead of being stored.</li>
+        <li>A document, its audit event and its extraction job are written in one transaction, so a document can never exist without the job that processes it. Workers claim jobs with <code>FOR UPDATE SKIP LOCKED</code> and recover from crashes.</li>
+        <li>Authorization is checked per object, with three roles and server-side sessions. Status transitions are atomic, so two reviewers cannot approve conflicting versions.</li>
+        <li>Rate limiting for login, signup and upload uses token buckets in PostgreSQL, so limits hold across any number of app instances without adding Redis.</li>
+        <li>The evaluation harness can fail CI when accuracy drops, so a prompt or model change cannot silently make extraction worse.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>hybrid-search</h3>
+        <a class="repo mono" href="https://github.com/daen8584-spec/hybrid-search">github.com/daen8584-spec/hybrid-search</a>
+      </div>
+      <p class="tagline">A retrieval service for RAG that combines BM25 keyword search and vector search inside PostgreSQL and merges them with Reciprocal Rank Fusion, evaluated on the BEIR SciFact benchmark.</p>
+      <ul class="tags">
+        <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>pgvector</li><li>Embeddings</li><li>Evaluation</li><li>Docker</li><li>mypy strict</li>
+      </ul>
+      <div class="metrics">
+        <div class="metric"><span class="value">0.719</span><span class="label">nDCG@10 for hybrid search, above BM25 (0.688) and vector search (0.700) alone</span></div>
+        <div class="metric"><span class="value">0.958</span><span class="label">Recall@100 for hybrid search, against 0.918 and 0.928 for each retriever alone</span></div>
+        <div class="metric"><span class="value">18 ms</span><span class="label">median retrieval and fusion latency for the top 100 documents</span></div>
+        <div class="metric"><span class="value">0.665</span><span class="label">BM25 nDCG@10 on SciFact reported in the BEIR paper, for reference</span></div>
+      </div>
+      <div class="story">
+        <p><strong>What the first measurement changed</strong>The first evaluation showed weak keyword ranking (nDCG@10 0.399) and revealed that the vector index settings were silently running exact search. I replaced the built-in ranking with BM25 over an inverted index in SQL (0.688) and tuned the index against exact search. A cross-encoder reranker gained less than the noise at about six seconds per query, so it ships as an option, not as the default.</p>
+      </div>
+      <h4>Engineering decisions</h4>
+      <ul class="points">
+        <li>One datastore: documents, chunks, the inverted index and the vector index live in PostgreSQL and are updated in one transaction.</li>
+        <li>Fusion weights and reranking are tuned on a separate query split, so the reported test scores are not fitted to the test set.</li>
+        <li>Ingestion is incremental: unchanged documents are skipped and unchanged chunks reuse their stored embeddings.</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>kvstore</h3>
+        <a class="repo mono" href="https://github.com/daen8584-spec/kvstore">github.com/daen8584-spec/kvstore</a>
+      </div>
+      <p class="tagline">An in-memory key-value server in C++20 that speaks the Redis protocol, so existing Redis clients and tools work with it unchanged.</p>
+      <ul class="tags">
+        <li>C++20</li><li>Linux epoll</li><li>Networking</li><li>Persistence</li><li>Sanitizers</li><li>Fuzzing</li><li>Docker</li>
+      </ul>
+      <div class="metrics">
+        <div class="metric"><span class="value">0.86 to 1.18x</span><span class="label">throughput relative to Redis on the same machine, without pipelining</span></div>
+        <div class="metric"><span class="value">61</span><span class="label">commands across strings, lists, hashes and sorted sets</span></div>
+        <div class="metric"><span class="value">Redis 7 and 8</span><span class="label">the same integration tests pass against kvstore and real Redis</span></div>
+      </div>
+      <h4>Engineering decisions</h4>
+      <ul class="points">
+        <li>A single-threaded event loop with no locks on the data path, fair reading across clients and backpressure for clients that do not read their replies.</li>
+        <li>The hash table resizes incrementally, so a resize never stalls a single request, and keys are hashed with SipHash and a random key against hash flooding.</li>
+        <li>Append-only persistence with configurable fsync, recovery from a truncated file and compaction in a forked child while the server keeps serving.</li>
+        <li>Checked with AddressSanitizer, UndefinedBehaviorSanitizer and continuous fuzzing of the protocol parser in CI.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <div class="grid2">
+      <div class="principle">
+        <h3>Measure before claiming</h3>
+        <p>I check behaviour against a reference rather than assuming it. When a first measurement exposes a weakness, the fix and the before and after numbers go into the documentation.</p>
+      </div>
+      <div class="principle">
+        <h3>Lead the agents, own the result</h3>
+        <p>I direct AI coding agents with clear specs and context, then review their output for correctness, authorization and data integrity before anything ships.</p>
+      </div>
+      <div class="principle">
+        <h3>Prefer the boring solution</h3>
+        <p>PostgreSQL for queues, rate limits and search before adding another service. Complexity has to earn its place with a measured gain.</p>
+      </div>
+      <div class="principle">
+        <h3>Write decisions down</h3>
+        <p>Each project records its significant design decisions and trade-offs in architecture decision records, so reviewers can check them against their own assumptions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>TypeScript, JavaScript, Python, C++, SQL, Bash</dd>
+      <dt>Web</dt><dd>Next.js App Router, React, Node.js, FastAPI, REST API design</dd>
+      <dt>Data</dt><dd>PostgreSQL, pgvector, schema and query design, transactions and locking, Redis</dd>
+      <dt>AI applications</dt><dd>LLM integration, RAG, embeddings, hybrid retrieval, reranking, evaluation harnesses, AI coding agents</dd>
+      <dt>Systems</dt><dd>Linux, network servers, event loops, persistence and crash recovery, performance measurement</dd>
+      <dt>Quality and delivery</dt><dd>Unit and integration testing, sanitizers, fuzzing, strict type checking, Docker, GitHub Actions</dd>
+      <dt>Languages spoken</dt><dd>Spanish (native), English (advanced)</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://github.com/daen8584-spec">github.com/daen8584-spec</a>
+  </div>
+</footer>
+
+</body>
+</html>
