@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Engineer | Portfolio</title>
-<meta name="description" content="Software engineer open to work. Web apps, APIs, databases, AI features, automation and the infrastructure around them.">
+<meta name="description" content="Software engineer open to work. I build software that stays correct when things go wrong: payments, data, performance, AI features and interfaces.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,8 +45,8 @@ a:hover { text-decoration: underline; }
 
 header { padding: 60px 0 40px; }
 .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
-h1 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 720px; }
-.lead { font-size: 18px; color: var(--muted); max-width: 660px; margin: 0 0 14px; }
+h1 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 740px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 680px; margin: 0 0 14px; }
 .open { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 8px; margin: 6px 0 24px; }
 .links { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn { display: inline-block; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 500; font-size: 15px; }
@@ -54,29 +54,30 @@ h1 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.2; letter-spacing: -0.0
 .btn:hover { text-decoration: none; border-color: var(--accent); }
 
 section { padding: 36px 0; border-top: 1px solid var(--line); }
-h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: -0.01em; }
+h2 { font-size: 22px; margin: 0 0 6px; letter-spacing: -0.01em; }
+.intro { color: var(--muted); margin: 0 0 20px; }
 
-.areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.area { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
-.area h3 { font-size: 16px; margin: 0 0 4px; }
-.area p { margin: 0; color: var(--muted); font-size: 15px; }
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.skill h3 { font-size: 17px; margin: 0 0 6px; }
+.skill p { margin: 0 0 10px; color: var(--muted); }
+.skill .proof { margin: 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text); }
+.skill .proof b { color: var(--accent); font-weight: 600; }
 
-.built { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-.built li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; }
-.built b { font-size: 16px; }
-.built span { color: var(--muted); }
+.live { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.live a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; color: var(--text); }
+.live a:hover { border-color: var(--accent); text-decoration: none; }
+.live b { display: block; color: var(--accent); }
+.live span { color: var(--muted); font-size: 15px; }
 
 .tools { color: var(--muted); margin: 0; }
 
 footer { padding: 36px 0 56px; border-top: 1px solid var(--line); }
 footer p { color: var(--muted); margin: 0 0 16px; }
 
-@media (max-width: 760px) {
-  .areas { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   header { padding: 40px 0 28px; }
-  .areas { grid-template-columns: 1fr; }
+  .skills, .live { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -85,8 +86,8 @@ footer p { color: var(--muted); margin: 0 0 16px; }
 <header>
   <div class="wrap">
     <p class="eyebrow">Software Engineer</p>
-    <h1>I build software from the database to the screen, and I like making it work well.</h1>
-    <p class="lead">Websites and web apps, APIs, databases, AI features, automation and the servers they run on. I'm comfortable picking up new tools and getting productive fast.</p>
+    <h1>I build software that keeps working when things go wrong.</h1>
+    <p class="lead">Payments that never charge twice, data that survives a crash, pages that work offline, and slow code made fast by finding the real cause. I work across back end, front end, data and AI, in TypeScript, Python and C++.</p>
     <p class="open">Open to work: full-time, part-time, contract or freelance, at any level.</p>
     <div class="links">
       <a class="btn primary" href="#contact">Get in touch</a>
@@ -99,43 +100,38 @@ footer p { color: var(--muted); margin: 0 0 16px; }
 
 <section>
   <div class="wrap">
-    <h2>What I can help with</h2>
-    <div class="areas">
-      <div class="area">
-        <h3>Web development</h3>
-        <p>Front end and back end, from a landing page to a full app with accounts and roles.</p>
+    <h2>What I bring to a team</h2>
+    <p class="intro">Each point links to code you can check.</p>
+    <div class="skills">
+      <div class="skill">
+        <h3>Systems that don't lose money or data</h3>
+        <p>I design for the cases that break real systems: a message delivered twice, events out of order, a crash halfway through.</p>
+        <p class="proof"><b>Proof:</b> a Stripe checkout where duplicate payment events and double-clicked refunds change nothing. <a href="https://github.com/daen8584-spec/storefront-payments/blob/main/docs/decisions.md">How</a></p>
       </div>
-      <div class="area">
-        <h3>APIs and integrations</h3>
-        <p>REST APIs, connecting third-party services, payments, webhooks.</p>
+      <div class="skill">
+        <h3>Correct under heavy traffic</h3>
+        <p>Concurrency bugs only show up under load, so I test for them on purpose and prove the test would catch them.</p>
+        <p class="proof"><b>Proof:</b> 12 people buying the last 5 items at once: exactly 5 sell. Without the lock, the same test oversells. <a href="https://github.com/daen8584-spec/storefront-payments">Code</a></p>
       </div>
-      <div class="area">
-        <h3>Databases</h3>
-        <p>Designing schemas, fixing slow queries, migrations and data cleanup.</p>
+      <div class="skill">
+        <h3>Finding why software is slow</h3>
+        <p>I measure before changing anything, and keep measuring when my first idea turns out wrong.</p>
+        <p class="proof"><b>Proof:</b> a 42 ns lookup that took over 200 ns inside the running server, traced to CPU cache misses and fixed. <a href="https://github.com/daen8584-spec/kvstore/blob/main/docs/adr/0009-transactions.md">Write-up</a></p>
       </div>
-      <div class="area">
-        <h3>AI features</h3>
-        <p>Chatbots, smart search, pulling data out of documents, using LLMs safely.</p>
+      <div class="skill">
+        <h3>AI features you can rely on</h3>
+        <p>I treat model output as untrusted, check it against a schema, and measure accuracy before a change ships.</p>
+        <p class="proof"><b>Proof:</b> found that OCR was dropping invoice totals and cut its error rate from 2% to 0.5%. <a href="https://github.com/daen8584-spec/docextract/blob/main/docs/adr/0008-ocr-for-scanned-pdfs.md">Write-up</a></p>
       </div>
-      <div class="area">
-        <h3>Automation</h3>
-        <p>Scripts and background jobs that take repetitive work off people's hands.</p>
+      <div class="skill">
+        <h3>Data that's checked before anyone sees it</h3>
+        <p>Automated pipelines that validate what they download and refuse to publish anything that looks wrong.</p>
+        <p class="proof"><b>Proof:</b> a dashboard rebuilt every week from NOAA and NASA, with a quality gate in front of every release. <a href="https://daen8584-spec.github.io/data-dashboard/">Live</a></p>
       </div>
-      <div class="area">
-        <h3>Performance and fixes</h3>
-        <p>Finding why something is slow or breaking, and fixing the cause.</p>
-      </div>
-      <div class="area">
-        <h3>DevOps</h3>
-        <p>Docker, CI/CD pipelines, Linux servers and deployments.</p>
-      </div>
-      <div class="area">
-        <h3>Testing</h3>
-        <p>Automated tests that catch problems before users do.</p>
-      </div>
-      <div class="area">
-        <h3>Maintenance</h3>
-        <p>Taking over existing code, cleaning it up and keeping it running.</p>
+      <div class="skill">
+        <h3>Interfaces that work for everyone</h3>
+        <p>Fast pages that work on phones, offline, with a keyboard and with a screen reader, tested in a real browser.</p>
+        <p class="proof"><b>Proof:</b> a budget app that installs on a phone and passes an automated accessibility scan in light and dark mode. <a href="https://daen8584-spec.github.io/budget-tracker/">Live</a></p>
       </div>
     </div>
   </div>
@@ -143,12 +139,18 @@ footer p { color: var(--muted); margin: 0 0 16px; }
 
 <section>
   <div class="wrap">
-    <h2>A few things I've built</h2>
-    <ul class="built">
-      <li><b><a href="https://github.com/daen8584-spec/docextract">DocExtract</a></b> <span>A web app that reads invoices, including scanned ones, and pulls out the important fields with AI. A person reviews the result before it's saved. TypeScript, Next.js, PostgreSQL.</span></li>
-      <li><b><a href="https://github.com/daen8584-spec/hybrid-search">hybrid-search</a></b> <span>A search service that combines keyword and AI search to find better results than either one alone. Python, PostgreSQL.</span></li>
-      <li><b><a href="https://github.com/daen8584-spec/kvstore">kvstore</a></b> <span>A database server that works with Redis tools and runs about as fast as Redis. C++.</span></li>
-    </ul>
+    <h2>How I work</h2>
+    <p class="intro">Tests that find bugs before users do, on every system the code runs on. Tests and measurements have caught a file path that could escape its folder on Windows, a form that could lose typing on slow devices, and a search ranking that made results worse. I write down why each decision was made, so the next person can change it safely.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Try it live</h2>
+    <div class="live">
+      <a href="https://daen8584-spec.github.io/budget-tracker/"><b>Budget tracker</b><span>Works offline and installs on your phone.</span></a>
+      <a href="https://daen8584-spec.github.io/data-dashboard/"><b>Climate dashboard</b><span>CO₂ and global temperature, updated weekly.</span></a>
+    </div>
   </div>
 </section>
 
@@ -165,8 +167,8 @@ footer p { color: var(--muted); margin: 0 0 16px; }
 
 <section>
   <div class="wrap">
-    <h2>Tools I use</h2>
-    <p class="tools">JavaScript, TypeScript, Python, C++, SQL, Bash, React, Next.js, Node.js, FastAPI, PostgreSQL, Redis, Docker, Git, GitHub Actions, Linux, OpenAI-compatible LLM APIs. I learn whatever the job needs.</p>
+    <h2>Tools</h2>
+    <p class="tools">TypeScript, JavaScript, Python, C++, SQL · React, Next.js, Node.js, Fastify, FastAPI · PostgreSQL, Redis, DuckDB · Stripe, LLM APIs, OCR · Docker, GitHub Actions, Linux. I pick up whatever the job needs.</p>
   </div>
 </section>
 
