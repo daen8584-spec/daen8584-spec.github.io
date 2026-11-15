@@ -3,30 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Software Engineer | Portfolio</title>
-<meta name="description" content="Software engineer open to work. Web apps, APIs, databases, AI features, automation and the infrastructure around them.">
+<title>daen8584 | Software engineer</title>
+<meta name="description" content="Software engineer. Back end, front end, data and AI. Open to work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #fbfbfa;
-  --surface: #ffffff;
   --text: #1b1f24;
   --muted: #5b636e;
   --line: #e4e6ea;
   --accent: #0e6b74;
-  --accent-soft: #e5f2f3;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1215;
-    --surface: #161a1f;
-    --text: #e6e8eb;
+    --bg: #111416;
+    --text: #e4e7ea;
     --muted: #9aa3ad;
-    --line: #262c33;
+    --line: #272d33;
     --accent: #5cc3cc;
-    --accent-soft: #15292c;
   }
 }
 * { box-sizing: border-box; }
@@ -36,156 +32,75 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
 }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-
-header { padding: 60px 0 40px; }
-.eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px; }
-h1 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 16px; max-width: 720px; }
-.lead { font-size: 18px; color: var(--muted); max-width: 660px; margin: 0 0 14px; }
-.open { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 8px; margin: 6px 0 24px; }
-.links { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn { display: inline-block; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-weight: 500; font-size: 15px; }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-.btn:hover { text-decoration: none; border-color: var(--accent); }
-
-section { padding: 36px 0; border-top: 1px solid var(--line); }
-h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: -0.01em; }
-
-.areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.area { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
-.area h3 { font-size: 16px; margin: 0 0 4px; }
-.area p { margin: 0; color: var(--muted); font-size: 15px; }
-
-.built { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-.built li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; }
-.built b { font-size: 16px; }
-.built span { color: var(--muted); }
-
-.tools { color: var(--muted); margin: 0; }
-
-footer { padding: 36px 0 56px; border-top: 1px solid var(--line); }
-footer p { color: var(--muted); margin: 0 0 16px; }
-
-@media (max-width: 760px) {
-  .areas { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 520px) {
-  header { padding: 40px 0 28px; }
-  .areas { grid-template-columns: 1fr; }
+a { color: var(--accent); }
+main { max-width: 680px; margin: 0 auto; padding: 64px 20px 72px; }
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 18px; letter-spacing: -0.01em; }
+h2 { font-size: 19px; margin: 44px 0 10px; }
+p { margin: 0 0 16px; }
+.muted { color: var(--muted); }
+ul.work { padding-left: 20px; margin: 0; }
+ul.work li { margin-bottom: 16px; }
+ul.work li::marker { color: var(--accent); }
+.small { font-size: 15px; }
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); }
+@media (max-width: 560px) {
+  main { padding-top: 40px; }
+  h1 { font-size: 26px; }
 }
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <p class="eyebrow">Software Engineer</p>
-    <h1>I build software from the database to the screen, and I like making it work well.</h1>
-    <p class="lead">Websites and web apps, APIs, databases, AI features, automation and the servers they run on. I'm comfortable picking up new tools and getting productive fast.</p>
-    <p class="open">Open to work: full-time, part-time, contract or freelance, at any level.</p>
-    <div class="links">
-      <a class="btn primary" href="#contact">Get in touch</a>
-      <a class="btn" href="https://github.com/daen8584-spec">GitHub</a>
-    </div>
-  </div>
-</header>
-
 <main>
 
-<section>
-  <div class="wrap">
-    <h2>What I can help with</h2>
-    <div class="areas">
-      <div class="area">
-        <h3>Web development</h3>
-        <p>Front end and back end, from a landing page to a full app with accounts and roles.</p>
-      </div>
-      <div class="area">
-        <h3>APIs and integrations</h3>
-        <p>REST APIs, connecting third-party services, payments, webhooks.</p>
-      </div>
-      <div class="area">
-        <h3>Databases</h3>
-        <p>Designing schemas, fixing slow queries, migrations and data cleanup.</p>
-      </div>
-      <div class="area">
-        <h3>AI features</h3>
-        <p>Chatbots, smart search, pulling data out of documents, using LLMs safely.</p>
-      </div>
-      <div class="area">
-        <h3>Automation</h3>
-        <p>Scripts and background jobs that take repetitive work off people's hands.</p>
-      </div>
-      <div class="area">
-        <h3>Performance and fixes</h3>
-        <p>Finding why something is slow or breaking, and fixing the cause.</p>
-      </div>
-      <div class="area">
-        <h3>DevOps</h3>
-        <p>Docker, CI/CD pipelines, Linux servers and deployments.</p>
-      </div>
-      <div class="area">
-        <h3>Testing</h3>
-        <p>Automated tests that catch problems before users do.</p>
-      </div>
-      <div class="area">
-        <h3>Maintenance</h3>
-        <p>Taking over existing code, cleaning it up and keeping it running.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<h1>Hi, I'm a software engineer.</h1>
 
-<section>
-  <div class="wrap">
-    <h2>A few things I've built</h2>
-    <ul class="built">
-      <li><b><a href="https://github.com/daen8584-spec/docextract">DocExtract</a></b> <span>A web app that reads invoices, including scanned ones, and pulls out the important fields with AI. A person reviews the result before it's saved. TypeScript, Next.js, PostgreSQL.</span></li>
-      <li><b><a href="https://github.com/daen8584-spec/hybrid-search">hybrid-search</a></b> <span>A search service that combines keyword and AI search to find better results than either one alone. Python, PostgreSQL.</span></li>
-      <li><b><a href="https://github.com/daen8584-spec/kvstore">kvstore</a></b> <span>A database server that works with Redis tools and runs about as fast as Redis. C++.</span></li>
-    </ul>
-  </div>
-</section>
+<p>Most of what I enjoy is the part of software nobody sees when it works: what happens when the network drops, when a message arrives twice, when two people click "buy" at the same moment, or when a page has to load on a cheap phone with no signal.</p>
+
+<p>I've worked across back end, front end, data and AI, mostly in TypeScript, Python and C++. I'm open to full-time, part-time, contract or freelance work, at any level.</p>
+
+<h2>Some things I've worked on</h2>
+
+<ul class="work">
+  <li>A checkout on Stripe where most of the work went into the edge cases. Stripe can send the same event twice, or in the wrong order. A customer can pay a second after their order expired. There's a test where 12 people try to buy the last 5 posters at the same time, and exactly 5 sell. <a href="https://github.com/daen8584-spec/storefront-payments">Code</a> · <a href="https://github.com/daen8584-spec/storefront-payments/blob/main/docs/decisions.md">why it's built this way</a></li>
+
+  <li>A Redis-compatible database server in C++. When I added transactions, writes got about 15% slower, and my first fix didn't change anything. Timing it inside the running server showed a 42 ns lookup taking over 200 ns because of CPU cache misses. A small 32 KB filter got most of the speed back. <a href="https://github.com/daen8584-spec/kvstore/blob/main/docs/adr/0009-transactions.md">Write-up</a></li>
+
+  <li>An invoice reader that uses an LLM and OCR, with a person checking the result before it's saved. Measuring the OCR on scanned invoices, I found it was silently dropping the line with the total, which is the one number that matters. A different Tesseract setting fixed it, and errors went from 2% to 0.5%. <a href="https://github.com/daen8584-spec/docextract">Code</a></li>
+
+  <li>Search for RAG systems that combines keyword and vector search in PostgreSQL. The first version made results worse than vector search alone. Rewriting the keyword ranking as BM25 in SQL made it both better and 17 times faster. <a href="https://github.com/daen8584-spec/hybrid-search">Code</a></li>
+
+  <li>A <a href="https://daen8584-spec.github.io/data-dashboard/">climate dashboard</a> that pulls CO₂ and temperature data from NOAA and NASA every Monday and checks it before publishing. If the data looks wrong, the old version stays up.</li>
+
+  <li>A <a href="https://daen8584-spec.github.io/budget-tracker/">budget app</a> that works offline and installs on a phone. The tests ran on slow machines and caught a bug where it could lose what you were typing, so I fixed that before anyone used it.</li>
+</ul>
+
+<p class="small muted">There's also a small <a href="https://github.com/daen8584-spec/file-organizer">command-line tool</a> for tidying up folders, which turned out to be a good lesson in how differently Windows handles file paths.</p>
+
+<h2>How I like to work</h2>
+
+<p>I measure before I change things, and I write tests that try to break the code rather than confirm it works. When I make a decision that someone might question later, I write down why, so the next person can change it without guessing.</p>
+
+<h2>Tools</h2>
+
+<p class="muted">TypeScript, Python, C++ and SQL most days. React, Next.js, Node.js and FastAPI. PostgreSQL, Redis and DuckDB. Docker and GitHub Actions. I'm comfortable picking up whatever a project already uses.</p>
 
 <!--
   Experience: uncomment and fill in when ready. Nothing shows until then.
 
-<section>
-  <div class="wrap">
-    <h2>Experience</h2>
-    <p><b>TITLE, COMPANY</b> &middot; START to END<br>ONE LINE ABOUT WHAT YOU DID</p>
-  </div>
-</section>
+<h2>Experience</h2>
+<p><b>TITLE, COMPANY</b>, START to END. ONE LINE ABOUT WHAT YOU DID.</p>
 -->
 
-<section>
-  <div class="wrap">
-    <h2>Tools I use</h2>
-    <p class="tools">JavaScript, TypeScript, Python, C++, SQL, Bash, React, Next.js, Node.js, FastAPI, PostgreSQL, Redis, Docker, Git, GitHub Actions, Linux, OpenAI-compatible LLM APIs. I learn whatever the job needs.</p>
-  </div>
-</section>
-
-</main>
-
-<footer id="contact">
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <p>Happy to talk about any role or project. I speak Spanish (native) and English (advanced).</p>
-    <div class="links">
-      <a class="btn primary" href="https://github.com/daen8584-spec">GitHub</a>
-      <!-- Add when ready:
-      <a class="btn" href="mailto:YOU@EXAMPLE.COM">Email</a>
-      <a class="btn" href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
-      <a class="btn" href="cv.pdf">CV (PDF)</a>
-      -->
-    </div>
-  </div>
+<footer>
+  <p>I speak Spanish and English. The best way to reach me right now is through <a href="https://github.com/daen8584-spec">GitHub</a>.</p>
+  <!-- Add when ready:
+  <p><a href="mailto:YOU@EXAMPLE.COM">Email</a> · <a href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a> · <a href="cv.pdf">CV</a></p>
+  -->
 </footer>
 
+</main>
 </body>
 </html>
